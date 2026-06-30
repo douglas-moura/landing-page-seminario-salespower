@@ -14,3 +14,20 @@ fecharMenu?.addEventListener('click', (): void => { toggleMenu() })
 
 const navMenuMobile = document.getElementById('link-mobile') as HTMLElement
 navMenuMobile?.addEventListener('click', (): void => { toggleMenu() })
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+
+            // Executa apenas uma vez
+            observer.unobserve(entry.target);
+        }
+    });
+}, {
+    threshold: 0.2
+})
+
+document.querySelectorAll('.animacao-slide-in').forEach(el => {
+    observer.observe(el)
+})

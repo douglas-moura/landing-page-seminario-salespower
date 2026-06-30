@@ -286,7 +286,8 @@
     }
     
     #palestrantes .palestrante-box img {
-        @apply absolute z-0 aspect-square max-h-[300px] md:max-h-[1000px]
+        @apply absolute z-0 aspect-square
+        max-h-[300px] md:max-h-[1000px]
         -bottom-40 right-0 md:-bottom-8 md:-right-52 lg:-bottom-0 lg:-right-60
         scale-[175%] md:scale-[75%] lg:scale-[125%]
         origin-bottom lg:origin-top-right
@@ -420,6 +421,20 @@
 
     .sombra-texto {
         text-shadow: .15rem .15rem .1rem rgba(0, 0, 0, .25);
+    }
+
+    .animacao-slide-in {
+    opacity: 0;
+    margin-right: -200px;
+
+    transition:
+        opacity 0.8s ease,
+        margin-right 0.8s ease;
+    }
+
+    .animacao-slide-in.active {
+        opacity: 1;
+        margin-right: 0px;
     }
 
     .tabler--map-pin {
