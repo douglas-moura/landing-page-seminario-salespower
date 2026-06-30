@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/x-icon" href="/src/assets/img/icone.ico">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+        <title>3º Seminário Sales&Power</title>
+    </head>
+    <body>
+        <header>
+            <section>
+                <div>
+                    <span id="logotipo">
+                        <a href="/#banner">
+                            <img src="./assets/img/logo.png" alt="Logotipo" class="h-20">
+                        </a>
+                    </span>
+                    <nav id="menu">
+                        <span>
+                            <a href="/#sobre">Sobre</a>
+                            <a href="/#palestrantes">Palestrantes</a>
+                            <a href="/#data-hora-local">Data e Hora</a>
+                            <a href="/#valores">Increva-se</a>
+                            <a href="/#rodape">Contato</a>
+                        </span>
+                    </nav>
+                </div>
+            </section>
+        </header>
+        <main>
+            <a href="/#banner" class="btn-top">
+                <span>
+                    <span class="tabler--arrow-up"></span>
+                </span>
+            </a>
+            <section id="banner" class="bg-colorido bg-cover bg-center no-repeat">
+                <div class="!grid-cols-1">
+                    <h3 class="!text-branco sombra-texto">3º Seminário Sales&Power</h3>
+                    <h1 class="titulo mr-28 sombra-texto">COMO TRANSFORMAR A FORÇA DE VENDAS NO MOTOR DE CRESCIMENTO DE LUCROS E MARKET SHARE, ANO APÓS ANO.</h1>
+                    <div class="banner-infos">
+                        <p class="sombra-texto">Quarta-Feira</p>
+                        <p class="sombra-texto">16 de Setembro</p>
+                        <p class="sombra-texto">Auditório SINDUSFARMA</p>
+                        <span class="btn-container w-1/3">
+                            <a href="https://www.sympla.com.br/evento/como-transformar-a-forca-de-vendas-no-motor-de-crescimento-de-lucros-e-market-share-ano-apos-ano/3480735" target="_blank">
+                                <button class="btn-primario">Quero participar</button>
+                            </a>
+                        </span>
+                    </div>
+                    <span class="banner-cronometro">
+                        <h2 class="sombra-texto">Não perca tempo</h2>
+                        <div class="contador">
+                            <div class="box-contador">
+                                <span class="num-contador" id="semanas">0</span>
+                                <p>semanas</p>
+                            </div>
+                            <div class="box-contador">
+                                <span class="num-contador" id="dias">0</span>
+                                <p>dias</p>
+                            </div>
+                            <div class="box-contador">
+                                <span class="num-contador" id="horas">00</span>
+                                <p>horas</p>
+                            </div>
+                            <div class="box-contador">
+                                <span class="num-contador" id="minutos">00</span>
+                                <p>minutos</p>
+                            </div>
+                            <div class="box-contador">
+                                <span class="num-contador" id="segundos">00</span>
+                                <p>segundos</p>
+                            </div>
+                        </div>
+                    </span>
+                </div>
+            </section>
+            <section id="sobre" class="bg-executiva bg-contain bg-no-repeat bg-right">
+                <div>
+                    <div>
+                        <h3 class="titulo-sessao text-azul-escuro sombra-texto">Descubra como a ciência e a metodologia — e não os achismos — ensinam a engajar, inspirar e liderar equipes na era da inteligência artificial e das grandes transformações.</h3>
+                        <p>Prepare-se para um seminário de transformação real tanto para profissionais da indústria farmacêutica, como para entusiastas de uma liderança diferenciada que procura na ciência formas de motivar, engajar e obter os melhores resultados proporcionados por suas forças de vendas.</p>
+                        <p>Para empoderar você ainda mais, reunimos líderes e especialistas reconhecidos, que vão compartilhar o que de fato impulsiona grandes resultados. Você vai ouvir o que poucos revelam — diretamente de quem faz acontecer.</p>
+                        <p>Um encontro de líder para líder, pensado para desbloquear potenciais, alavancando, de verdade, a performance do seu time.</p>
+                        <p>Mais do que um evento: um projeto criado para transformar a trajetória da sua empresa – e a sua.</p>
+                    </div>
+                </div>
+                <div class="gradiente-branco"></div>
+            </section>
+            <section id="palestrantes">
+                <div class="grid-cols-1">
+                    <h3 class="titulo-sessao text-branco">Conheça quem vai te mostrar os caminhos comprovados cientificamente para uma grande virada.</h3>
+                    <p class="!text-branco">Especialistas que vão conduzir você nesta jornada de transformação. Cada convidado traz uma bagagem sólida de conhecimento e experiência prática em sua área. São profissionais reconhecidos nacional e internacionalmente, prontos para oferecer conteúdo de alto nível — com aplicabilidade direta no seu dia a dia profissional.</p>
+                </div>
+                <div class="palestrantes-container">
+                    <div class="palestrante-box bg-[#3CAA36]">
+                        <span>
+                            <h2>Wilson Borges</h2>
+                            <p class="tema-palestra"><strong>Palestra: </strong>Liderança Nutritiva — gerando mais proatividade e produtividade.</p>
+                            <p class="minicurriculo">Empreendedor, IVI Partner, consultor sênior e <strong>CEO da WB Consultoria Empresarial</strong>, Wilson é um executivo
+                                com mais de 40 anos de experiência na indústria farmacêutica, tendo liderado equipes em empresas como
+                                <strong>Pfizer, Roche, Medley, Wyeth, Zambon e Natulab</strong>. <br><br> Ao longo da carreira, construiu uma trajetória
+                                que combina alta performance com gestão humana, sendo especialista em formar equipes engajadas
+                                e alinhadas a resultados, colaboração e propósito. Ex-jogador profissional de futebol nas décadas
+                                de 1970 e 1980, traz para o mundo corporativo uma visão prática de liderança baseada em disciplina,
+                                espírito de equipe e superação.</p>
+                        </span>
+                        <div class="gradiente-preto"></div>
+                        <img class="!-right-24 !scale-[110%]" src="./assets/img/palestrantes/wilson_borges.png" alt="Palestrante Wilson Borges">
+                    </div>
+                    <div class="palestrante-box bg-[#2DB5AF]">
+                        <span>
+                            <h2>Priscilah Plaça</h2>
+                            <p class="tema-palestra"><strong>Palestra: </strong>Como motivar a força de vendas a usar tecnologia e o treinamento oferecido.</p>
+                            <p class="minicurriculo">Com mais de <strong>35 anos de experiência</strong>, atuou em empresas como <strong>Coca-Cola, Sadia e Pernod Ricard</strong>,
+                                desenvolvendo estratégias para aumentar a produtividade de vendas e o desempenho de equipes comerciais.
+                                Na Sadia, liderou projetos que capacitaram <strong>mais de 2.400 profissionais de vendas</strong> em todo o Brasil.<br><br>
+                                Com <strong>MBA em Gestão Empresarial pela Unicamp</strong>, por meio da <strong>People and Sales</strong> e da <strong>Venda de Valor</strong>, há mais de 16 anos desenvolve projetos de educação corporativa
+                                e transformação em vendas para empresas como <strong>Samsung, Nivea, Nestlé, Volkswagen, JBS, BRF, Cosan,
+                                Faber-Castell, Bombril, M. Dias Branco, Bob’s, Vigor e Itambé</strong>, formando equipes comerciais focadas em
+                                gerar valor, e não competir apenas por preço.</p>
+                        </span>
+                        <div class="gradiente-preto"></div>
+                        <img class="!-right-28" src="./assets/img/palestrantes/priscilah_placa.png" alt="Palestrante Priscilah Plaça">
+                    </div>
+                    <div class="palestrante-box bg-[#664695]">
+                        <span>
+                            <h2>Cesar Pupo</h2>
+                            <p class="tema-palestra"><strong>Palestra: </strong>A utilização da ia para aumento da produtividade da força de vendas</p>
+                            <p class="minicurriculo">Formado em Administração de Empresas pela FTS e técnico em Informática pelo SENAI, Cesar se destaca como
+                                um profissional de negócios com forte viés digital, capaz de conectar estratégia comercial, inovação e
+                                gestão de plataformas. <br><br> Possui mais de 17 anos de carreira na Close-Up International, empresa
+                                referência em inteligência de mercado para o setor farmacêutico na América Latina. <br><br> Sua
+                                trajetória combina uma sólida base comercial, com atuação como Key Account Manager por 13 anos, com a
+                                evolução para papéis estratégicos em inovação e transformação digital. Atualmente, lidera a gestão de
+                                produto de CRM para a LATAM, atuando na intersecção entre tecnologia, dados e negócios.</p>
+                        </span>
+                        <div class="gradiente-preto"></div>
+                        <img class="!-right-56 !scale-x-[130%]" src="./assets/img/palestrantes/cesar_pupo.png" alt="Palestrante Cesar Pupo">
+                    </div>
+                    <div class="palestrante-box bg-[#BD1B1A]">
+                        <span>
+                            <h2>Profº. Dr. Kalil Duailibi</h2>
+                            <p class="tema-palestra"><strong>Palestra: </strong>A psicologia por trás da motivação e do engajamento na busca da superação de resultados.</p>
+                            <p class="minicurriculo">Professor Titular de Psicopatologia do Instituto de Psiquiatria e Psicanálise da Infância e Adolescência
+                                de São Paulo, Dr. Kalil possui uma sólida trajetória acadêmica e profissional. É autor de 6 livros
+                                técnicos, 17 capítulos de livros e mais de 40 artigos publicados. <br><br> Como palestrante, já realizou
+                                mais de 120 apresentações em simpósios e congressos nacionais e internacionais, contribuindo de forma
+                                relevante para o avanço da psiquiatria no Brasil e no mundo.</p>
+                        </span>
+                        <div class="gradiente-preto"></div>
+                        <img class="!-right-28" src="./assets/img/palestrantes/kalil_duailibi.png" alt="Palestrante Kalil Duailibi">
+                    </div>
+                    <div class="palestrante-box bg-[#DF2987]">
+                        <span>
+                            <h2>Drª Liana Nazareth</h2>
+                            <p class="tema-palestra"><strong>Palestra: </strong>Quais são os principais motivadores: A diferença entre a percepção geral e a realidade.</p>
+                            <p class="minicurriculo">Administradora formada pela FGV, mestre em Administração de Empresas pela Universidade Mackenzie e
+                                doutora pelo Programa Interunidades da USP (FEA, FSP e FCF), Liana também é especialista em Qualidade
+                                e Produtividade pela USP, certificada pelo Empretec (SEBRAE) e possui atualização em Capacitação
+                                Empreendedora pela USP. Atualmente, é professora na Universidade Anhembi Morumbi.<br><br> Empreendedora
+                                desde 1984, fundou o Grupo Times e liderou projetos em agências e consultorias voltadas à comunicação,
+                                marketing de incentivo e CRM, atendendo grandes empresas da indústria farmacêutica, automobilística e
+                                de seguros. Em 2010, fundou a LIMT – Análise Estratégica de Indicadores, onde atua como CEO.</p>
+                        </span>
+                        <div class="gradiente-preto"></div>
+                        <img class="!-right-44 !-bottom-8" src="./assets/img/palestrantes/liana_nazareth.png" alt="Palestrante Liana Nazareth">
+                    </div>
+                    <div class="palestrante-box bg-[#274394]">
+                        <span>
+                            <h2>Neuler Peçanha</h2>
+                            <p class="tema-palestra"><strong>Palestra: </strong>Metodologia para gerar engajamento e superação em programas motivacionais, ano após ano.</p>
+                            <p class="minicurriculo">Formado pela <strong>FGV</strong>, Neuler fundou o <strong>Grupo Times</strong> em 1984 e, desde então, lidera projetos e consultorias
+                                voltados ao aumento de produtividade e desempenho em grandes empresas dos setores farmacêutico,
+                                automotivo, agro e de seguros.<br><br> Especialista em Gestão e Marketing, construiu uma trajetória
+                                sólida na criação e implantação de programas motivacionais de alto impacto, com resultados expressivos
+                                em empresas como <strong>Pfizer, Sanofi, Zambon, Medley, TheraSkin, P&G (Gillette, Oral-B e Duracell), Porto
+                                Seguro, Mapfre, SulAmérica, General Motors, Delco, Heliar, Castrol, John Deere, Case New Holland e
+                                Pirelli</strong>, entre outras.</p>
+                        </span>
+                        <div class="gradiente-preto"></div>
+                        <img class="!-right-44 !scale-[100%] !scale-x-[110%]" src="./assets/img/palestrantes/neuler_pecanha.png" alt="Palestrante Neuler Peçanha">
+                    </div>
+                </div>
+                <div class="grid-cols-1 mt-8">
+                    <p class="text-branco text-center text-sm w-4/5 mx-auto sombra-texto">Não perca a oportunidade de aprender com especialistas reconhecidos nacionalmente, que compartilharão experiências, estratégias e tendências capazes de ampliar sua visão sobre inovação, gestão, vendas e crescimento sustentável. Um conteúdo pensado para inspirar novas ideias e gerar resultados reais para o seu negócio.</p>
+                    <a class="w-1/3 mx-auto" href="https://www.sympla.com.br/evento/como-transformar-a-forca-de-vendas-no-motor-de-crescimento-de-lucros-e-market-share-ano-apos-ano/3480735" target="_blank">
+                        <button class="btn-secundario">Garanta sua vaga</button>
+                    </a>
+                </div>
+            </section>
+            <section id="data-hora-local">
+                <div>
+                    <div class="infos">
+                        <h3 class="titulo-sessao text-branco sombra-texto">Reserve na sua Agenda</h3>
+                        <p class="text-branco pr-28 mb-12">Participe de um dia de muito conhecimento, networking e troca de experiências com especialistas do mercado. Confira abaixo a data, o horário e o local do seminário e programe-se para aproveitar essa oportunidade.</p>
+                        <div>
+                            <span class="lista-item">
+                                <span class="tabler--map-pin"></span>
+                                <p>SINDUSFARMA | Auditório</p>
+                            </span>
+                            <span class="lista-item">
+                                <span class="tabler--calendar-week"></span>
+                                <p>Quarta-feira, 16 de Setembro de 2026</p>
+                            </span>
+                            <span class="lista-item">
+                                <span class="tabler--clock"></span>
+                                <p>8h30 às 12h30</p>
+                            </span>
+                            <span class="lista-item">
+                                <span class="tabler--alert-triangle"></span>
+                                <p>Vagas limitadas: garanta já o seu ingresso</p>
+                            </span>
+                        </div>
+                    </div>
+                    <div id="map"></div>
+                </div>
+            </section>
+            <section id="valores">
+                <div class="!grid-cols-1">
+                    <div>
+                        <h3 class="titulo-sessao text-branco sombra-texto">Participe do maior evento sobre engajamento e produtividade da força de vendas da indústria farmacêutica.</h3>
+                        <p class="!text-branco">Garanta sua vaga com valor especial por tempo limitado e invista em conhecimento.</p>
+                    </div>
+                    <div class="grid grid-cols-3 gap-4">
+                        <div class="valor-box">
+                            <div class="lote-infos from-[#e7e004] to-[#C3BD03]">
+                                <div class="encerrado-msg">
+                                    <strong>Encerrado</strong>
+                                </div>
+                                <h4 class="lote-titulo">LOTE 01</h4>
+                                <p class="lote-prazo">até 31 de Julho de 2026</p>
+                                <span class="lote-preco">
+                                    <p class="valor-assets">R$</p>
+                                    <p class="valor">2.500</p>
+                                    <p class="valor-assets">,00</p>
+                                </span>
+                                <div class="trapezio bg-[#C3BD03]"></div>
+                            </div>
+                            <div class="lote-lista border-[#C3BD03]">
+                                <p>Para 1 pessoa da empresa</p>
+                                <p>Até 12x sem juros</p>
+                                <p>Pague com cartão ou Pix</p>
+                            </div>
+                        </div>
+                        <div class="valor-box">
+                            <div class="lote-infos from-[#44A491] to-[#358071]">
+                                <div class="encerrado-msg">
+                                    <strong>Encerrado</strong>
+                                </div>
+                                <h4 class="lote-titulo">LOTE 02</h4>
+                                <p class="lote-prazo">até 31 de Agosto de 2026</p>
+                                <span class="lote-preco">
+                                    <p class="valor-assets">R$</p>
+                                    <p class="valor">2.800</p>
+                                    <p class="valor-assets">,00</p>
+                                </span>
+                                <div class="trapezio bg-[#358071]"></div>
+                            </div>
+                            <div class="lote-lista border-[#358071]">
+                                <p>Para 1 pessoa da empresa</p>
+                                <p>Até 12x sem juros</p>
+                                <p>Pague com cartão ou Pix</p>
+                            </div>
+                        </div>
+                        <div class="valor-box">
+                            <div class="lote-infos from-[#E11A75] to-[#B3155D]">
+                                <div class="encerrado-msg">
+                                    <strong>Encerrado</strong>
+                                </div>
+                                <h4 class="lote-titulo">LOTE 03</h4>
+                                <p class="lote-prazo">até 15 de Setembro de 2026</p>
+                                <span class="lote-preco">
+                                    <p class="valor-assets">R$</p>
+                                    <p class="valor">3.100</p>
+                                    <p class="valor-assets">,00</p>
+                                </span>
+                                <div class="trapezio bg-[#B3155D]"></div>
+                            </div>
+                            <div class="lote-lista border-[#B3155D]">
+                                <p>Para 1 pessoa da empresa</p>
+                                <p>Até 12x sem juros</p>
+                                <p>Pague com cartão ou Pix</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="btn-container">
+                        <a class="mx-auto" href="https://www.sympla.com.br/evento/como-transformar-a-forca-de-vendas-no-motor-de-crescimento-de-lucros-e-market-share-ano-apos-ano/3480735" target="_blank">
+                            <button class="btn-secundario">Compre agora seu ingresso</button>
+                        </a>
+                    </div>
+                </div>
+            </section>
+            <section id="banner-fim" class="bg-colorido bg-cover bg-center no-repeat">
+                <div>
+                    <div>
+                        <h1 class="uppercase text-branco sombra-texto">Sua liderança está pronta para o próximo nível?</h1>
+                        <h3 class="text-branco sombra-texto">Você que já lidera: chegou a hora de elevar ainda mais seu impacto nos resultados da sua empresa.</h3>
+                        <div class="mt-8">
+                            <span class="lista-item">
+                                <span class="tabler--circle-check"></span>
+                                <p>Engaje</p>
+                            </span>
+                            <span class="lista-item">
+                                <span class="tabler--circle-check"></span>
+                                <p>Inspire</p>
+                            </span>
+                            <span class="lista-item">
+                                <span class="tabler--circle-check"></span>
+                                <p>Mude o jogo</p>
+                            </span>
+                        </div>
+                        <div>
+                            <a href="https://www.sympla.com.br/evento/como-transformar-a-forca-de-vendas-no-motor-de-crescimento-de-lucros-e-market-share-ano-apos-ano/3480735" target="_blank">
+                                <button class="btn-primario">Inscreva-se agora e fortaleça sua liderança</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <footer id="rodape" class="bg-preto">
+                <div class="grid-cols-4">
+                    <div>
+                        <p>3º Seminário Sales&Power</p>
+                    </div>
+                    <span class="flex-col items-center"> 
+                        <p>Apoio:</p>
+                        <img src="./assets/img/logo-gtx100.png" alt="Logotipo GTX100 Incentivos" class="w-24 !mt-4">
+                    </span>
+                    <div>
+                        <span class="lista-item">
+                            <span class="tabler--brand-whatsapp"></span>
+                            <p>+55 11 99723-2585</p>
+                        </span>
+                        <span class="lista-item">
+                            <span class="tabler--mail"></span>
+                            <p>seminarios@gtx100.com.br</p>
+                        </span>
+                    </div>
+                    <span class="social">
+                        <a href="https://gtx100.com.br/" target="_blank">
+                            <span class="tabler--world icone"></span>
+                        </a>
+                        <a href="https://www.linkedin.com/company/gtx100" target="_blank">
+                            <span class="tabler--brand-linkedin"></span>
+                        </a>
+                        <a href="https://www.instagram.com/gtx100.incentivos/" target="_blank">
+                            <span class="tabler--brand-instagram"></span>
+                        </a>
+                    </span>
+                </div>
+            </footer>
+        </main>
+        <script>
+            // L.control.locate().addTo(map); // desative para evitar override
+            const map = L.map('map').setView([-23.597346, -46.682867], 15)
+
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '&copy; OpenStreetMap contributors' }).addTo(map)
+            L.marker([-23.597346, -46.682867]).addTo(map).openPopup()
+        </script>
+    </body>
+</html>

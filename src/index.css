@@ -1,0 +1,545 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* sm	40rem (640px)	@media (width >= 40rem) { ... } */
+/* md	48rem (768px)	@media (width >= 48rem) { ... } */
+/* lg	64rem (1024px)	@media (width >= 64rem) { ... } */
+/* xl	80rem (1280px)	@media (width >= 80rem) { ... } */
+/* 2xl	96rem (1536px)	@media (width >= 96rem) { ... } */
+
+/* amarelo - #E9B60B */
+/* azul escuro - #273270 */
+/* azul claro - #536EB3 */
+/* azul pelicula - #F0F3FA */
+
+@layer base {
+    * {
+        @apply font-montserrat m-0 p-0 box-border border-[0px] border-[#ff0000] z-20
+    }
+
+    html {
+        @apply scroll-smooth
+    }
+
+    header {
+        @apply w-full p-0 fixed top-0 z-50 h-24
+    }
+
+    header section {
+        @apply !py-0 !min-h-24
+    }
+
+    header section > div {
+        @apply !min-h-24
+    }
+
+    header section > div span {
+        @apply w-full h-full flex-row items-center
+    }
+
+    header nav span {
+        @apply justify-between
+    }
+
+    main {
+        @apply min-h-dvh overflow-x-hidden
+    }
+
+    main > section {
+        @apply first:pt-40
+    }
+
+    section {
+        @apply w-full flex flex-col justify-between relative
+        lg:min-h-[400px]
+        py-20 lg:py-28
+        /* overflow-hidden */
+    }
+
+    section>div,
+    footer>div {
+        @apply grid gap-x-12 mx-auto z-40
+        w-5/6 lg:w-11/12 xl:w-3/4
+        lg:grid-cols-2
+    }
+
+    section>div>div,
+    footer>div>div {
+        @apply last:mb-0 mb-12
+    }
+
+    footer {
+        @apply w-full flex flex-col justify-between relative
+        py-12 lg:py-20
+        /* overflow-hidden */
+    }
+
+    span {
+        @apply flex
+    }
+
+    figure, picture {
+        @apply flex
+    }
+
+    h1 {
+        @apply font-bold leading-tight mb-4
+        text-[1.5rem] md:text-[2rem] lg:text-3xl xl:text-4xl
+    }
+
+    h2 {
+        @apply text-[3rem] lg:text-2xl font-bold
+    }
+
+    h3 {
+        @apply text-[1rem] lg:text-lg font-bold
+    }
+
+    h4 {
+        @apply text-[.8rem] lg:text-sm
+    }
+
+    h5 {
+        @apply text-xs
+    }
+
+    p, li {
+        @apply text-preto text-[.8rem] lg:text-[1rem] z-40
+    }
+
+    strong {
+        @apply font-bold z-40 text-[.8rem] lg:text-[1rem]
+    }
+
+    p, ul {
+        @apply mt-8 lg:mt-4 mb-0
+    }
+
+    li {
+        @apply flex items-center gap-2
+    }
+
+    a {
+        @apply cursor-pointer
+    }
+
+    input, textarea {
+        @apply outline-0 font-light p-3 rounded
+    }
+
+    table {
+        @apply mb-8 last:mb-0
+    }
+
+    button {
+        @apply rounded-full text-branco font-bold py-6 px-12 cursor-pointer
+        md:min-w-[300px]
+        text-[.8rem] md:text-[1rem]
+        mb-8 lg:mb-0
+        mt-8 lg:mt-8
+        mx-auto lg:mx-0
+        lg:text-[1rem]
+    }
+}
+
+@layer components {
+    .titulo {
+        @apply text-branco font-bold mb-8 uppercase
+    }
+
+    .btn-top {
+        @apply fixed z-50 right-8 bottom-8 
+    }
+
+    .btn-top > span {
+        @apply cursor-pointer flex-col justify-center items-center bg-branco rounded-full h-12 w-12
+    }
+
+    .btn-top > span > span {
+        @apply text-[2rem] flex
+    }
+
+    .icone-contato {
+        @apply fixed z-50 text-3xl bg-[#4AE565] cursor-pointer text-branco p-4 rounded-full flex justify-center items-center
+        bottom-6 right-6 lg:bottom-12 lg:right-12 
+    }
+
+    .btn-container {
+        @apply flex justify-start
+    }
+
+    .btn-primario {
+        @apply !bg-azul-escuro text-branco
+    }
+
+    .btn-secundario {
+        @apply !bg-vermelho text-branco
+    }
+
+    .titulo-sessao {
+        @apply text-[1.8rem] leading-9 uppercase
+    }
+
+    header {
+        @apply bg-preto/50 backdrop-blur-lg
+    }
+
+    header a {
+        @apply text-branco font-semibold
+    }
+
+    #palestrantes, #valores, #data-hora-local {
+        @apply bg-azul-escuro
+    }
+
+    #banner {
+        @apply !pt-40
+    }
+
+    #banner .banner-infos p {
+        @apply text-branco text-[1.5rem]
+    }
+
+    #banner .banner-cronometro {
+        @apply px-40 items-center
+    }
+
+    #banner .banner-cronometro h2 {
+        @apply w-1/3 text-branco uppercase
+    }
+
+    #banner .banner-cronometro .contador {
+        @apply gap-2 grid grid-cols-5 w-2/3
+    }
+
+    #banner .banner-cronometro .contador .box-contador {
+        @apply bg-branco p-4 rounded-lg text-center
+    }
+
+    #banner .banner-cronometro .contador .box-contador span {
+        @apply text-[2.5rem] flex-row justify-center font-semibold sombra-texto
+    }
+
+    #banner .banner-cronometro .contador .box-contador p {
+        @apply m-0 text-[.8rem]
+    }
+
+    #sobre .gradiente-branco {
+        @apply bg-gradient-to-r from-branco/100 from-40% to-branco/0 to-60% absolute h-full w-full top-0 left-0 z-10
+    }
+
+    #palestrantes .palestrantes-container {
+        @apply mt-8 gap-4
+    }
+
+    #palestrantes .palestrante-box {
+        @apply p-8 m-0 h-[600px] relative overflow-hidden rounded-xl
+    }
+    
+    #palestrantes .palestrante-box > span {
+        @apply flex-col w-2/4
+    }
+    
+    #palestrantes .palestrante-box span h2 {
+        @apply !text-branco text-[1.8rem] sombra-texto
+    }
+    
+    #palestrantes .palestrante-box span p {
+        @apply text-branco last:mt-8 sombra-texto
+    }
+    
+    #palestrantes .palestrante-box span .tema-palestra,
+    #palestrantes .palestrante-box span .tema-palestra strong {
+        @apply !text-[.8rem] sombra-texto
+    }
+    
+    #palestrantes .palestrante-box span .minicurriculo,
+    #palestrantes .palestrante-box span .minicurriculo strong {
+        @apply !text-[.7rem]
+    }
+    
+    #palestrantes .palestrante-box .gradiente-preto {
+        @apply absolute left-0 top-0 h-full w-4/5 bg-gradient-to-r from-preto/50 from-30% to-preto/0 to-100% z-10
+    }
+    
+    #palestrantes .palestrante-box img {
+        @apply absolute bottom-0 right-0 h-full scale-[120%] origin-top-right z-0
+    }
+
+    #valores {
+        @apply text-branco
+    }
+
+    #valores .valor-box {
+        @apply text-center
+    }
+
+    #valores .valor-box .lote-infos {
+        @apply py-12 relative w-full border-t-8 border-branco bg-gradient-to-b
+    }
+
+    #valores .valor-box .lote-infos .lote-titulo {
+        @apply text-[2rem] text-branco
+    }
+
+    #valores .valor-box .lote-infos .lote-prazo {
+        @apply text-[1rem] text-branco
+    }
+
+    #valores .valor-box .lote-infos .lote-preco {
+        @apply w-full justify-center mt-12
+    }
+
+    #valores .valor-box .lote-infos .lote-preco .valor-assets {
+        @apply text-[1rem] !m-0 leading-[.8rem] text-branco
+    }
+
+    #valores .valor-box .lote-infos .lote-preco .valor {
+        @apply text-[3rem] !m-0 leading-[2rem] !ml-4 text-branco
+    }
+
+    #valores .valor-box .trapezio {
+        @apply h-4 w-full absolute -bottom-4 left-0
+    }
+
+    #valores .valor-box .lote-lista {
+        @apply bg-branco py-16 m-0 border-b-[1rem] rounded-b-2xl
+    }
+
+    #valores .valor-box .lote-lista p {
+        @apply text-[.75rem] mb-2 last:mb-0 !text-center opacity-70
+    }
+
+    #valores .encerrado > * {
+        @apply !saturate-0
+    }
+
+    #valores .encerrado .encerrado-msg {
+        @apply !block absolute right-4 -top-8 bg-[#990000] p-4 rounded-xl
+    }
+
+    #valores .valor-box .encerrado-msg {
+        @apply hidden
+    }
+
+    #valores .btn-container button {
+        @apply mx-auto
+    }
+
+    #data-hora-local .infos .lista-item {
+        @apply flex-row items-center text-branco mb-8 last:mb-0
+    }
+
+    #data-hora-local .infos .lista-item span {
+        @apply m-0 text-[2rem] mr-4 text-vermelho
+    }
+
+    #data-hora-local .infos .lista-item p {
+        @apply m-0 text-branco
+    }
+
+    #data-hora-local #map {
+        @apply h-[500px] rounded-xl
+    }
+
+    #banner-fim .lista-item {
+        @apply flex items-center mb-4 last:mb-0 sombra-texto
+    }
+
+    #banner-fim .lista-item span {
+        @apply text-[3rem] text-branco
+    }
+
+    #banner-fim .lista-item p {
+        @apply m-0 ml-4 text-branco text-2xl font-semibold
+    }
+
+    #rodape div > * {
+        @apply text-center justify-center
+    }
+
+    #rodape div * {
+        @apply !text-branco m-0 text-[.75rem]
+    }
+
+    #rodape .lista-item {
+        @apply flex items-center mb-4 last:mb-0
+    }
+    
+    #rodape .lista-item span {
+        @apply text-[1.5rem] text-branco mr-4
+    }
+
+    #rodape .social a {
+        @apply mr-4 last:mr-0
+    }
+
+    #rodape .social a span {
+        @apply !text-[2rem]
+    }
+}
+
+@layer utilities {
+    .trapezio {
+        clip-path: polygon(30% 100%, 70% 100%, 80% 0, 20% 0);
+    }
+
+    .sombra-texto {
+        text-shadow: .2rem .2rem .1rem rgba(0, 0, 0, .25);
+    }
+
+    .tabler--map-pin {
+        display: inline-block;
+        width: 1em;
+        height: 1em;
+        --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg fill='none' stroke='black' stroke-linecap='round' stroke-linejoin='round' stroke-width='2'%3E%3Cpath d='M9 11a3 3 0 1 0 6 0a3 3 0 0 0-6 0'/%3E%3Cpath d='M17.657 16.657L13.414 20.9a2 2 0 0 1-2.827 0l-4.244-4.243a8 8 0 1 1 11.314 0'/%3E%3C/g%3E%3C/svg%3E");
+        background-color: currentColor;
+        -webkit-mask-image: var(--svg);
+        mask-image: var(--svg);
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        -webkit-mask-size: 100% 100%;
+        mask-size: 100% 100%;
+    }
+
+    .tabler--calendar-week {
+        display: inline-block;
+        width: 1em;
+        height: 1em;
+        --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='none' stroke='black' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M4 7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm12-4v4M8 3v4m-4 4h16M7 14h.013m2.997 0h.005m2.995 0h.005m3 0h.005m-3.005 3h.005m-6.01 0h.005m2.995 0h.005'/%3E%3C/svg%3E");
+        background-color: currentColor;
+        -webkit-mask-image: var(--svg);
+        mask-image: var(--svg);
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        -webkit-mask-size: 100% 100%;
+        mask-size: 100% 100%;
+    }
+
+    .tabler--clock {
+        display: inline-block;
+        width: 1em;
+        height: 1em;
+        --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg fill='none' stroke='black' stroke-linecap='round' stroke-linejoin='round' stroke-width='2'%3E%3Cpath d='M3 12a9 9 0 1 0 18 0a9 9 0 0 0-18 0'/%3E%3Cpath d='M12 7v5l3 3'/%3E%3C/g%3E%3C/svg%3E");
+        background-color: currentColor;
+        -webkit-mask-image: var(--svg);
+        mask-image: var(--svg);
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        -webkit-mask-size: 100% 100%;
+        mask-size: 100% 100%;
+    }
+
+    .tabler--alert-triangle {
+        display: inline-block;
+        width: 1em;
+        height: 1em;
+        --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='none' stroke='black' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M12 9v4m-1.637-9.409L2.257 17.125a1.914 1.914 0 0 0 1.636 2.871h16.214a1.914 1.914 0 0 0 1.636-2.87L13.637 3.59a1.914 1.914 0 0 0-3.274 0M12 16h.01'/%3E%3C/svg%3E");
+        background-color: currentColor;
+        -webkit-mask-image: var(--svg);
+        mask-image: var(--svg);
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        -webkit-mask-size: 100% 100%;
+        mask-size: 100% 100%;
+    }
+
+    .tabler--circle-check {
+        display: inline-block;
+        width: 1em;
+        height: 1em;
+        --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg fill='none' stroke='black' stroke-linecap='round' stroke-linejoin='round' stroke-width='2'%3E%3Cpath d='M3 12a9 9 0 1 0 18 0a9 9 0 1 0-18 0'/%3E%3Cpath d='m9 12l2 2l4-4'/%3E%3C/g%3E%3C/svg%3E");
+        background-color: currentColor;
+        -webkit-mask-image: var(--svg);
+        mask-image: var(--svg);
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        -webkit-mask-size: 100% 100%;
+        mask-size: 100% 100%;
+    }
+
+    .tabler--world {
+        display: inline-block;
+        width: 1em;
+        height: 1em;
+        --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg fill='none' stroke='black' stroke-linecap='round' stroke-linejoin='round' stroke-width='2'%3E%3Cpath d='M3 12a9 9 0 1 0 18 0a9 9 0 0 0-18 0m.6-3h16.8M3.6 15h16.8'/%3E%3Cpath d='M11.5 3a17 17 0 0 0 0 18m1-18a17 17 0 0 1 0 18'/%3E%3C/g%3E%3C/svg%3E");
+        background-color: currentColor;
+        -webkit-mask-image: var(--svg);
+        mask-image: var(--svg);
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        -webkit-mask-size: 100% 100%;
+        mask-size: 100% 100%;
+    }
+
+    .tabler--brand-linkedin {
+        display: inline-block;
+        width: 1em;
+        height: 1em;
+        --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg fill='none' stroke='black' stroke-linecap='round' stroke-linejoin='round' stroke-width='2'%3E%3Cpath d='M8 11v5m0-8v.01M12 16v-5m4 5v-3a2 2 0 1 0-4 0'/%3E%3Cpath d='M3 7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4v10a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4z'/%3E%3C/g%3E%3C/svg%3E");
+        background-color: currentColor;
+        -webkit-mask-image: var(--svg);
+        mask-image: var(--svg);
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        -webkit-mask-size: 100% 100%;
+        mask-size: 100% 100%;
+    }
+
+    .tabler--brand-instagram {
+        display: inline-block;
+        width: 1em;
+        height: 1em;
+        --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg fill='none' stroke='black' stroke-linecap='round' stroke-linejoin='round' stroke-width='2'%3E%3Cpath d='M4 8a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v8a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4z'/%3E%3Cpath d='M9 12a3 3 0 1 0 6 0a3 3 0 0 0-6 0m7.5-4.5v.01'/%3E%3C/g%3E%3C/svg%3E");
+        background-color: currentColor;
+        -webkit-mask-image: var(--svg);
+        mask-image: var(--svg);
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        -webkit-mask-size: 100% 100%;
+        mask-size: 100% 100%;
+    }
+
+    .tabler--brand-whatsapp {
+        display: inline-block;
+        width: 1em;
+        height: 1em;
+        --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg fill='none' stroke='black' stroke-linecap='round' stroke-linejoin='round' stroke-width='2'%3E%3Cpath d='m3 21l1.65-3.8a9 9 0 1 1 3.4 2.9z'/%3E%3Cpath d='M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0za5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1'/%3E%3C/g%3E%3C/svg%3E");
+        background-color: currentColor;
+        -webkit-mask-image: var(--svg);
+        mask-image: var(--svg);
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        -webkit-mask-size: 100% 100%;
+        mask-size: 100% 100%;
+    }
+
+    .tabler--mail {
+        display: inline-block;
+        width: 1em;
+        height: 1em;
+        --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg fill='none' stroke='black' stroke-linecap='round' stroke-linejoin='round' stroke-width='2'%3E%3Cpath d='M3 7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z'/%3E%3Cpath d='m3 7l9 6l9-6'/%3E%3C/g%3E%3C/svg%3E");
+        background-color: currentColor;
+        -webkit-mask-image: var(--svg);
+        mask-image: var(--svg);
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        -webkit-mask-size: 100% 100%;
+        mask-size: 100% 100%;
+    }
+
+    .tabler--arrow-up {
+        display: inline-block;
+        width: 1em;
+        height: 1em;
+        --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='none' stroke='black' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M12 5v14m6-8l-6-6m-6 6l6-6'/%3E%3C/svg%3E");
+        background-color: currentColor;
+        -webkit-mask-image: var(--svg);
+        mask-image: var(--svg);
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        -webkit-mask-size: 100% 100%;
+        mask-size: 100% 100%;
+    }
+}
