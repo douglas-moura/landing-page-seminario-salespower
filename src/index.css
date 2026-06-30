@@ -380,13 +380,17 @@
         @apply m-0 ml-4 text-branco text-2xl font-semibold
     }
 
-    #rodape div > * {
-        @apply text-center justify-center !my-8 lg:!my-0
+    #rodape span {
+        @apply text-center justify-center items-center mt-8 lg:mt-0
     }
 
-    #rodape div * {
+    #rodape span > * {
         @apply !text-branco m-0 text-[.75rem]
     }
+
+    #rodape .contatos {
+        @apply !flex-col
+    } 
 
     #rodape .lista-item {
         @apply flex items-center mb-4 last:mb-0
