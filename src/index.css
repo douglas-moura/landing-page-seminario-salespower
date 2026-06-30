@@ -222,7 +222,7 @@
     }
 
     #banner .banner-cronometro {
-        @apply lg:px-40 items-center flex-col lg:flex-row
+        @apply lg:px-40 items-center flex-col md:flex-row
     }
 
     #banner .banner-cronometro h2 {
@@ -231,7 +231,7 @@
 
     #banner .banner-cronometro .contador {
         @apply gap-2 grid
-        grid-cols-2 lg:grid-cols-5
+        grid-cols-2 md:grid-cols-3 lg:grid-cols-5
         w-full lg:w-2/3
     }
 
@@ -256,11 +256,11 @@
     }
 
     #palestrantes .palestrante-box {
-        @apply p-6 !pb-[350px] lg:!p-8 m-0 lg:h-[600px] relative overflow-hidden rounded-xl
+        @apply p-6 !pb-[350px] md:!p-8 m-0 lg:h-[600px] relative overflow-hidden rounded-xl
     }
     
     #palestrantes .palestrante-box > span {
-        @apply flex-col lg:w-2/4
+        @apply flex-col md:w-1/2
     }
     
     #palestrantes .palestrante-box span h2 {
@@ -282,13 +282,13 @@
     }
     
     #palestrantes .palestrante-box .gradiente-preto {
-        @apply absolute left-0 top-0 h-full w-full lg:w-4/5 bg-gradient-to-b lg:bg-gradient-to-r from-preto/50 from-30% to-preto/0 to-100% z-10
+        @apply absolute left-0 top-0 h-full w-full md:w-4/5 bg-gradient-to-b md:bg-gradient-to-r from-preto/50 from-30% to-preto/0 to-100% z-10
     }
     
     #palestrantes .palestrante-box img {
         @apply absolute z-0 aspect-square
-        -bottom-28 right-0 lg:-bottom-0 lg:-right-60
-        scale-[175%] lg:scale-[125%]
+        -bottom-28 right-0 md:-bottom-8 md:-right-52 lg:-bottom-0 lg:-right-60
+        scale-[175%] md:scale-[75%] lg:scale-[125%]
         origin-bottom lg:origin-top-right
     }
 
@@ -309,11 +309,11 @@
     }
 
     #valores .valor-box .lote-infos .lote-prazo {
-        @apply text-[1rem] text-branco
+        @apply text-[1rem] text-branco px-4
     }
 
     #valores .valor-box .lote-infos .lote-preco {
-        @apply w-full justify-center mt-12
+        @apply w-full justify-center mt-12 md:scale-75 lg:scale-100
     }
 
     #valores .valor-box .lote-infos .lote-preco .valor-assets {
@@ -394,6 +394,10 @@
     
     #rodape .lista-item span {
         @apply text-[1.5rem] text-branco mr-4
+    }
+
+    #rodape .social {
+        @apply items-center
     }
 
     #rodape .social a {
