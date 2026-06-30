@@ -7,8 +7,8 @@ module.exports = {
     theme: {
         extend: {
             backgroundImage: {
-                'colorido': "url('/src/assets/img/bg-padrao-textura.jpg')",
-                'executiva': "url('/src/assets/img/executiva.jpg')"
+                'colorido': "url('/src/assets/img/bg-padrao-textura.webp')",
+                'executiva': "url('/src/assets/img/executiva.webp')"
             },
         },
         fontFamily: {
