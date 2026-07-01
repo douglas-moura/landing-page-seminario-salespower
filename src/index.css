@@ -252,6 +252,10 @@
         @apply bg-gradient-to-r from-branco/100 from-40% to-branco/0 to-60% absolute h-full w-full top-0 left-0 z-10
     }
 
+    #sobre > div > div {
+        @apply lg:pr-16
+    }
+
     #palestrantes .palestrantes-container {
         @apply mt-8 gap-4
     }
@@ -286,12 +290,16 @@
         @apply absolute left-0 top-0 h-full w-full md:w-4/5 bg-gradient-to-b md:bg-gradient-to-r from-preto/50 from-30% to-preto/0 to-100% z-10
     }
     
-    #palestrantes .palestrante-box img {
-        @apply absolute z-0 aspect-square
+    #palestrantes .palestrante-box .img-palestrante {
+        @apply absolute z-10 aspect-square
         max-h-[300px] md:max-h-[1000px]
         -bottom-40 right-0 md:-bottom-8 md:-right-52 lg:-bottom-0 lg:-right-60
         scale-[175%] md:scale-[75%] lg:scale-[125%]
         origin-bottom lg:origin-top-right
+    }
+
+    #palestrantes .palestrante-box .img-padrao-dots {
+        @apply absolute z-0 top-0 left-0 w-full h-full object-cover mix-blend-overlay opacity-5
     }
 
     #valores {
@@ -433,7 +441,7 @@
     }
 
     .sombra-texto {
-        text-shadow: .15rem .15rem .1rem rgba(0, 0, 0, .25);
+        text-shadow: .2rem .2rem .15rem rgba(0, 0, 0, .25);
     }
 
     .animacao-slide-in {
